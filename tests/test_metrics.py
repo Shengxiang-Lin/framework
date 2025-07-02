@@ -1,7 +1,7 @@
 import torch
 import unittest
 import math
-from ..metrics import recall, ndcg, recalls_and_ndcgs_for_ks, split_at_index
+from src.metrics import recall, ndcg, recalls_and_ndcgs_for_ks, split_at_index
 
 class TestMetrics(unittest.TestCase):
     def setUp(self):
@@ -100,7 +100,3 @@ class TestMetrics(unittest.TestCase):
         left3d, right3d = split_at_index(split_dim, split_index, t3d)
         self.assertEqual(left3d.shape, (2, 3, 1))
         self.assertEqual(right3d.shape, (2, 3, 3))
-
-if __name__ == '__main__':
-    # 运行所有测试
-    unittest.main(verbosity=2)
